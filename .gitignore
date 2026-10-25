@@ -1,0 +1,21 @@
+# ===== 依赖 =====
+node_modules/
+tools/node_modules/
+
+# ===== 构建产物 =====
+dist/
+*.exe
+
+# ===== 运行时用户数据（本地游戏库 / 封面 / 日志，含个人隐私，切勿提交）=====
+config/
+*.log
+
+# ===== 系统 / 编辑器 =====
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# ===== koffi 运行期释放目录（%TEMP% 下，不应出现在仓库）=====
+gamebox3-koffi-v1/
