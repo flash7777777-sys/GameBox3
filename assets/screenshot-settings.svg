@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" role="img" aria-label="GameBox 3 设置界面预览">
+  <rect x="6" y="6" width="988" height="628" rx="14" fill="#1b1d23"/>
+  <rect x="6" y="6" width="988" height="6" rx="3" fill="#4cc2ff" opacity="0.5"/>
+
+  <!-- title bar -->
+  <rect x="6" y="6" width="988" height="42" rx="14" fill="#15171c"/>
+  <rect x="6" y="34" width="988" height="14" fill="#15171c"/>
+  <circle cx="34" cy="27" r="6" fill="#22d3ee"/>
+  <text x="52" y="33" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#e6e9ef">设置 - GameBox 3</text>
+  <rect x="948" y="18" width="16" height="14" rx="3" fill="#3a3f4b"/>
+
+  <!-- left tabs -->
+  <rect x="22" y="70" width="180" height="540" rx="10" fill="#15171c"/>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d7dbe0">
+    <rect x="30" y="86" width="164" height="32" rx="6" fill="#4cc2ff" opacity="0.16"/><text x="46" y="107">常规</text>
+    <text x="46" y="145">游戏库</text>
+    <text x="46" y="183">外观</text>
+    <text x="46" y="221">网络 / 代理</text>
+    <text x="46" y="259">关于</text>
+  </g>
+
+  <!-- content -->
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="230" y="92" font-size="18" font-weight="700" fill="#e6e9ef">常规</text>
+
+    <!-- row: 开机自启 -->
+    <text x="230" y="140" font-size="15" fill="#d7dbe0">开机自动启动</text>
+    <text x="230" y="160" font-size="12" fill="#8b929e">登录 Windows 后后台静默运行</text>
+    <rect x="820" y="128" width="44" height="24" rx="12" fill="#4cc2ff"/>
+    <circle cx="852" cy="140" r="9" fill="#0b1020"/>
+
+    <!-- row: 显示隐藏游戏 -->
+    <text x="230" y="208" font-size="15" fill="#d7dbe0">显示隐藏的游戏</text>
+    <text x="230" y="228" font-size="12" fill="#8b929e">被标记为隐藏条目的也会出现在库中</text>
+    <rect x="820" y="196" width="44" height="24" rx="12" fill="#3a3f4b"/>
+    <circle cx="832" cy="208" r="9" fill="#9aa1ad"/>
+
+    <!-- row: 修改器托管 -->
+    <text x="230" y="276" font-size="15" fill="#d7dbe0">启用修改器托管</text>
+    <text x="230" y="296" font-size="12" fill="#8b929e">启动游戏时一并启动同名 Trainer，退出后延时关闭</text>
+    <rect x="820" y="264" width="44" height="24" rx="12" fill="#4cc2ff"/>
+    <circle cx="852" cy="276" r="9" fill="#0b1020"/>
+
+    <!-- row: 代理 -->
+    <text x="230" y="344" font-size="15" fill="#d7dbe0">网络代理（SOCKS5 / HTTP）</text>
+    <rect x="230" y="360" width="360" height="34" rx="8" fill="#262a33"/>
+    <text x="246" y="382" font-size="13" fill="#7d8794">127.0.0.1:7890</text>
+    <rect x="606" y="360" width="80" height="34" rx="8" fill="#262a33"/>
+    <text x="628" y="382" font-size="13" fill="#c3ccda">测试 ▾</text>
+
+    <!-- divider -->
+    <line x1="230" y1="430" x2="884" y2="430" stroke="#2a2f3a" stroke-width="1"/>
+
+    <!-- theme picker -->
+    <text x="230" y="470" font-size="15" fill="#d7dbe0">主题色</text>
+    <g>
+      <circle cx="250" cy="500" r="12" fill="#4cc2ff" stroke="#fff" stroke-width="2"/>
+      <circle cx="290" cy="500" r="12" fill="#22d3ee"/>
+      <circle cx="330" cy="500" r="12" fill="#a855f7"/>
+      <circle cx="370" cy="500" r="12" fill="#10b981"/>
+      <circle cx="410" cy="500" r="12" fill="#f97316"/>
+    </g>
+
+    <rect x="760" y="560" width="120" height="38" rx="8" fill="#4cc2ff"/>
+    <text x="800" y="584" font-size="14" font-weight="700" fill="#0b1020" text-anchor="middle">保存</text>
+  </g>
+</svg>
