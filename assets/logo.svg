@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120" role="img" aria-label="GameBox 3 logo">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.55" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f7fb"/>
+      <stop offset="1" stop-color="#c3ccda"/>
+    </linearGradient>
+  </defs>
+
+  <!-- emblem: rounded square with monogram GB + 3 badge -->
+  <rect x="14" y="14" width="92" height="92" rx="22" fill="url(#lg)"/>
+  <text x="60" y="74" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#0b1020" text-anchor="middle">GB</text>
+  <g transform="translate(86,18)">
+    <circle r="16" fill="#0b1020"/>
+    <text x="0" y="6" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="800" fill="#22d3ee" text-anchor="middle">3</text>
+  </g>
+
+  <!-- wordmark -->
+  <text x="124" y="62" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="800" fill="url(#txt)">GameBox</text>
+  <text x="124" y="98" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" fill="#8b929e">Windows 原生游戏聚合启动器</text>
+</svg>
