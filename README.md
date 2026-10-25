@@ -1,6 +1,7 @@
 # GameBox 3
 
 > Windows 原生游戏聚合启动器 —— **Node.js + koffi FFI 直接驱动 Win32 / GDI+**，打包为**单 EXE**，双击即用，不依赖浏览器、不依赖安装。
+<img width="3836" height="2058" alt="PixPin_2026-10-25_18-52-18" src="https://github.com/user-attachments/assets/63a922e7-abca-496d-b9c4-b920b043eab6" />
 
 适用场景：把 Steam 之外散落在多个目录里的单机/学习版/独立游戏统一收纳、自动抓封面、一键启动，并管理"同时只跑一款游戏 + 一个修改器"。
 
