@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMEBOX3 · 产品 + 复盘综合文档</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --line:#2a2f3a;
+    --txt:#e6e9ef; --sub:#9aa3b2; --accent:#4da3ff; --gold:#ffd24d; --red:#ff7a7a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Microsoft YaHei UI","PingFang SC",system-ui,sans-serif;
+    background:radial-gradient(1200px 600px at 70% -10%,#1b2030 0%,var(--bg) 60%);
+    color:var(--txt);padding:40px 20px;line-height:1.75}
+  .wrap{max-width:920px;margin:0 auto}
+  header{margin-bottom:10px;text-align:center}
+  .badge{display:inline-block;font-size:12px;color:var(--accent);border:1px solid var(--accent);
+    border-radius:999px;padding:3px 12px;margin-bottom:14px}
+  h1{font-size:34px;letter-spacing:1px}
+  h1 .v{color:var(--gold)}
+  .tag{color:var(--sub);margin-top:8px;font-size:15px}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:30px 0 6px}
+  .section-head{display:flex;align-items:center;gap:10px;margin:30px 0 14px}
+  .section-head .num{width:30px;height:30px;border-radius:8px;background:var(--accent);color:#0f1115;
+    font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .section-head h2{font-size:22px;letter-spacing:.5px}
+  .lead{color:var(--sub);font-size:14.5px;margin:2px 0 6px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+  .card h3{font-size:16px;margin-bottom:8px;color:#fff}
+  .card ul{list-style:none}
+  .card li{position:relative;padding-left:20px;margin:8px 0;font-size:13.8px;color:#dfe3ea}
+  .card li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;
+    border-radius:50%;background:var(--accent)}
+  .card li b{color:#fff}
+  .gold li::before{background:var(--gold)}
+  .red li::before{background:var(--red)}
+  .law{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:6px 22px;margin-top:6px}
+  .law li{margin:14px 0;font-size:14.5px;color:#dfe3ea;list-style:none}
+  .law li b{color:var(--gold)}
+  .law li code{background:var(--panel2);padding:2px 6px;border-radius:5px;color:#cdd6e4;font-size:13px}
+  .method{background:linear-gradient(180deg,#19202c,#141821);border:1px solid var(--line);
+    border-radius:14px;padding:18px 22px;margin-top:6px}
+  .method ol{margin-left:4px;padding:0;list-style:none;counter-reset:m}
+  .method li{counter-increment:m;position:relative;padding-left:34px;margin:11px 0;font-size:14px;color:#dfe3ea}
+  .method li::before{content:counter(m);position:absolute;left:0;top:1px;width:22px;height:22px;
+    border-radius:50%;background:var(--accent);color:#0f1115;font-size:12px;font-weight:700;
+    display:flex;align-items:center;justify-content:center}
+  .method li b{color:#fff}
+  .tip{margin-top:14px;padding:14px 18px;border-radius:12px;background:#15201a;border:1px solid #2c4a3a;color:#bfe8cf;font-size:14px}
+  footer{margin-top:30px;color:var(--sub);font-size:13px;border-top:1px solid var(--line);padding-top:16px;text-align:center}
+  footer code{background:var(--panel2);padding:2px 7px;border-radius:6px;color:#cdd6e4}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">Windows 原生游戏聚合启动器</span>
+    <h1>GAMEBOX<span class="v">3</span></h1>
+    <p class="tag">Node.js + koffi FFI 直接驱动 Win32 / GDI+ 的原生窗口应用 · 单 EXE 即开即用</p>
+  </header>
+
+  <!-- ============ 第一部分：产品功能介绍 ============ -->
+  <div class="section-head"><span class="num">1</span><h2>产品功能介绍</h2></div>
+  <p class="lead">适用场景：本地多目录散装游戏（Steam 之外）的统一收纳、封面美化与一键启动。</p>
+  <div class="grid">
+    <div class="card">
+      <h3>核心能力</h3>
+      <ul>
+        <li><b>原生窗口</b>：不依赖浏览器，单 EXE 双击运行，启动即最大化</li>
+        <li><b>多目录扫描</b>：支持多个游戏根目录，增量扫描只处理新游戏</li>
+        <li><b>自动封面</b>：Steam / Bing / DDG 多源抓取，失败可手动补搜</li>
+        <li><b>官方中文名</b>：经 Steam 商店 API 校验，确认同款才采用</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>运行与进程管控</h3>
+      <ul>
+        <li><b>强制单实例</b>：同时仅一款游戏 + 一个修改器，切换自动结束上一款</li>
+        <li><b>修改器看门狗</b>：游戏退出 3 秒后自动关闭提权修改器（仅一次 UAC）</li>
+        <li><b>幽灵启动防护</b>：屏蔽注入点击、后台节流与最小化期间的误触发</li>
+        <li><b>退出即恢复</b>：游戏退出后窗口自动恢复并最大化</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>操作与交互</h3>
+      <ul>
+        <li><b>手柄支持</b>：可一键开关，严格前台门控（非激活窗口屏蔽一切手柄操作）</li>
+        <li><b>金色标记点</b>：封面右上角标注该游戏带有修改器</li>
+        <li><b>重命名</b>：悬停卡片即可改名，手动名不被自动中文名覆盖</li>
+        <li><b>安全移除</b>：移除目录带确认弹窗，避免误清整库</li>
+      </ul>
+    </div>
+    <div class="card gold">
+      <h3>网络与部署</h3>
+      <ul>
+        <li><b>代理支持</b>：SOCKS5 / HTTP，配置即时生效，可测试连通性</li>
+        <li><b>独立打包</b>：Node SEA 打包为单 EXE，拷贝到任意目录即可用</li>
+        <li><b>数据随行</b>：配置、游戏库、封面均落在 EXE 同目录，便于迁移</li>
+        <li><b>首次引导</b>：空库时弹出系统目录选择框，零配置上手</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ============ 第二部分：编写经验与教训 ============ -->
+  <div class="section-head"><span class="num">2</span><h2>编写经验与教训总结</h2></div>
+  <p class="lead">基于一次完整的「浏览器版 → 原生 Win32 重写」开发，沉淀可直接复用的硬规则、分领域陷阱与验证方法论。</p>
+
+  <h3 style="color:var(--accent);font-size:17px;margin:18px 0 8px">五条最该记住的铁律</h3>
+  <ul class="law">
+    <li><b>① koffi 声明 flat API 前，逐一核对 GdiplusFlat.h 的签名与参数顺序。</b>
+      顺序错 / 单位错往往 <code>返回错误码而非崩溃</code>，静默失败最难查（FillPath 把 path 当 brush 用，全程 ObjectBusy 却"看起来正常"）。</li>
+    <li><b>② PER_MONITOR_AWARE_V2 下，GetClientRect / WM_SIZE / 鼠标坐标全是物理像素。</b>
+      缓冲区绝不二次乘 DPI；用 <code>buf == client</code> 断言守住，否则屏幕只显示全部内容的 57%。</li>
+    <li><b>③ 自绘 UI 的父窗口必须带 WS_CLIPCHILDREN(0x02000000)。</b>
+      否则父窗口 BitBlt 会把原生 EDIT 子控件的像素整块擦掉——表现为"输入框要点一下才显示"。</li>
+    <li><b>④ 凡"一次性尝试"（搜封面 / 中文名）必须记录尝试时间戳。</b>
+      不能用"结果是否为空"判断完成态，否则失败态被永久当成"已完成"、后配代理也补不回图。</li>
+    <li><b>⑤ 改配置文件用 Node 写，绝不依赖 PowerShell 的 UTF-8。</b>
+      <code>Set-Content -Encoding UTF8</code> 在 PS5.1 会带 BOM，破坏 JSON.parse 并回落默认值（库被清空）。</li>
+  </ul>
+
+  <h3 style="color:var(--accent);font-size:17px;margin:22px 0 8px">分领域教训</h3>
+  <div class="grid">
+    <div class="card red">
+      <h3>FFI / GDI+ 签名</h3>
+      <ul>
+        <li><b>GdipFillPath/DrawPath</b>：brush/pen 在 path <b>之前</b>（不是之后）</li>
+        <li><b>GdipDrawImage</b> 只有 (x,y)；缩放必须用 <b>GdipDrawImageRect</b></li>
+        <li><b>GdipCreatePen1 / GdipCreateFont</b> 的 unit 必须传 <b>2(UnitPixel)</b>，传 3(Point) 静默不画</li>
+        <li><b>GdipStringFormatGetGenericDefault</b> 是共享对象，三种对齐会互相污染 → 各自 <b>CreateStringFormat</b></li>
+      </ul>
+    </div>
+    <div class="card red">
+      <h3>坐标系 / 裁剪</h3>
+      <ul>
+        <li>所有 Path 坐标按 dpiScale 乘；Graphics 坐标系 = 设备像素</li>
+        <li>GDI+ <b>不支持 WebP / SVG</b>，抓图白名单排除，占位图不落盘</li>
+        <li>1 逻辑像素的竖线在高 DPI 下会变成"贯穿全屏的细线"——暗色 UI 直接不画分隔线</li>
+      </ul>
+    </div>
+    <div class="card red">
+      <h3>原生 EDIT 控件</h3>
+      <ul>
+        <li>必须 <b>WS_CHILD</b>，否则建成 owned popup 跑到窗口外</li>
+        <li><b>SetWindowTheme(hwnd,"","")</b> 关主题，暗色画刷才生效</li>
+        <li>颜色是 <b>COLORREF(0x00BBGGRR)</b>，不是 ARGB；字体×dpiScale + WM_SETFONT</li>
+        <li>验证用 <b>PrintWindow</b> 而非 BitBlt（BitBlt 抓不到子控件）</li>
+      </ul>
+    </div>
+    <div class="card red">
+      <h3>进程 / 提权</h3>
+      <ul>
+        <li>spawn 提权程序 <b>EACCES</b> → 降级 <code>Start-Process -Verb RunAs</code></li>
+        <li>强制单实例靠 <b>tasklist/taskkill 镜像名</b>，不只 child.pid（引导器秒退）</li>
+        <li>"退出游戏自动启动别的游戏" = 后台<b>节流漏采样</b> + 断连重连幽灵 → 前台门控 + 轮询间隔保护 + 来源日志</li>
+        <li>提权子进程交给<b>看门狗</b>管生命周期，全程只要一次 UAC</li>
+      </ul>
+    </div>
+    <div class="card red">
+      <h3>网络 / 封面</h3>
+      <ul>
+        <li>增量优化别跳过失败态：<b>coverTriedAt + fixCovers</b> 三档覆盖</li>
+        <li>中文名必须<b>反查英文</b>校验，避免 DLC / 同名小游戏误匹配</li>
+        <li>代理配置即时生效；长标题要生成查询变体，国区不可见退回 cc=us</li>
+        <li>弱网候选图要<b>并发探测</b>，串行会拖到 90s+</li>
+      </ul>
+    </div>
+    <div class="card red">
+      <h3>工程化 / 打包</h3>
+      <ul>
+        <li>Node SEA：postject <b>sentinelFuse 不带 :0</b>；入口剥 shebang</li>
+        <li>构建前用 <b>PowerShell Remove-Item</b> 清 dist（回收站 safe-delete 遇几千封面文件会失败）</li>
+        <li>覆盖写 JSON 可能 EPERM（杀软扫描 tmp）→ saveJson 加回退直写</li>
+        <li>PE Subsystem 3→2 去黑窗；原生二进制别漏收集</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="color:var(--accent);font-size:17px;margin:22px 0 8px">验证方法论（让问题可定位、可复现）</h3>
+  <div class="method">
+    <ol>
+      <li><b>渲染层与应用层分离</b>：app 启动后手动渲染一帧即退出，配合 <code>GAMEBOX_DUMP_FRAME</code> 导出 BMP，免重打包即可看图迭代。</li>
+      <li><b>BMP→PNG 手搓编码器</b>：用 Node 内置 zlib 转（BGRA→RGB、行序翻转），再用 Read 工具看图。</li>
+      <li><b>GDI+ 状态码统计</b>：给每个调用包状态检查，统计 0=Ok / 2=InvalidParameter / 4=ObjectBusy，大量 4 即签名/顺序错。</li>
+      <li><b>来源标记日志</b>：启动/动作入口打 <code>click@x,y / key-Enter / gamepad-A</code>，定位"自己动起来"的元凶。</li>
+      <li><b>buf==client 断言</b>：防止"导出图完整、但屏幕只显示一角"的漏判（DPI 双重缩放）。</li>
+      <li><b>PrintWindow 验证子控件</b>：<code>PW_RENDERFULLCONTENT</code> 不受遮挡，能真正看到 EDIT 像素。</li>
+    </ol>
+    <div class="tip">元经验：一开始就把「帧导出 + 状态码统计 + 来源日志」三件套建好，能省下约 80% 的调试时间——多数 GDI+ 与"幽灵启动"问题靠它们才定位得出来。</div>
+  </div>
+
+  <h3 style="color:var(--accent);font-size:17px;margin:22px 0 8px">给后续原生窗口项目的建议</h3>
+  <div class="card" style="margin-top:6px">
+    <ul>
+      <li>把 koffi 声明集中管理，并对照 <b>GdiplusFlat.h</b> 逐条校对，别边写边猜——这是本项目耗时最多的隐性成本。</li>
+      <li>凡是"尝试型"状态机（搜图、取名、下载），<b>先设计时间戳字段</b>，别用结果反推"是否完成"。</li>
+      <li>自绘 UI 从第一行就加 <b>WS_CLIPCHILDREN</b> 和 <b>buf==client</b> 断言，比事后排查省事得多。</li>
+      <li>危险动作（启动程序、结束进程）的输入源统一走 <b>门控 + 来源日志</b>，把"后台自己动"变成可观测事件。</li>
+      <li>配置一律 Node 读写，把"无 BOM"当成写入契约的一部分。</li>
+    </ul>
+  </div>
+
+  <footer>
+    技术栈：<code>Node.js</code> · <code>koffi</code> · <code>Win32 / GDI+</code> · <code>Node SEA</code><br>
+    本文档由功能介绍与开发复盘（2026-10-18）合并而成，可对照技能 win32-gdiplus-koffi（32 条陷阱）逐条查证。
+  </footer>
+</div>
+</body>
+</html>
