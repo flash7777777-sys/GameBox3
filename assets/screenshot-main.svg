@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" role="img" aria-label="GameBox 3 主界面预览">
+  <defs>
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#4338ca"/></linearGradient>
+    <linearGradient id="c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#06b6d4"/><stop offset="1" stop-color="#3b82f6"/></linearGradient>
+    <linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f97316"/><stop offset="1" stop-color="#ef4444"/></linearGradient>
+    <linearGradient id="c4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10b981"/><stop offset="1" stop-color="#14b8a6"/></linearGradient>
+    <linearGradient id="c5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ec4899"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
+    <linearGradient id="c6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eab308"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+  </defs>
+
+  <!-- window -->
+  <rect x="6" y="6" width="988" height="628" rx="14" fill="#1b1d23"/>
+  <rect x="6" y="6" width="988" height="6" rx="3" fill="#4cc2ff" opacity="0.5"/>
+
+  <!-- title bar -->
+  <rect x="6" y="6" width="988" height="42" rx="14" fill="#15171c"/>
+  <rect x="6" y="34" width="988" height="14" fill="#15171c"/>
+  <circle cx="34" cy="27" r="6" fill="#22d3ee"/>
+  <text x="52" y="33" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#e6e9ef">GameBox 3</text>
+  <rect x="900" y="18" width="16" height="14" rx="3" fill="#3a3f4b"/>
+  <rect x="924" y="18" width="16" height="14" rx="3" fill="#3a3f4b"/>
+  <rect x="948" y="18" width="16" height="14" rx="3" fill="#3a3f4b"/>
+
+  <!-- sidebar -->
+  <rect x="6" y="48" width="180" height="586" fill="#15171c"/>
+  <text x="22" y="80" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#6b7280">游戏库</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#d7dbe0">
+    <rect x="14" y="92" width="164" height="30" rx="6" fill="#4cc2ff" opacity="0.16"/><circle cx="30" cy="107" r="4" fill="#4cc2ff"/><text x="44" y="112">全部游戏</text>
+    <circle cx="30" cy="142" r="4" fill="#8b929e"/><text x="44" y="147">最近游玩</text>
+    <circle cx="30" cy="174" r="4" fill="#8b929e"/><text x="44" y="179">我的收藏</text>
+    <circle cx="30" cy="206" r="4" fill="#8b929e"/><text x="44" y="211">修改器</text>
+    <circle cx="30" cy="238" r="4" fill="#8b929e"/><text x="44" y="243">模拟器</text>
+  </g>
+  <text x="22" y="300" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#6b7280">平台</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#9aa1ad">
+    <text x="30" y="324">Steam</text>
+    <text x="30" y="350">Epic</text>
+    <text x="30" y="376">本地 / 单机</text>
+  </g>
+
+  <!-- main header: search + sort -->
+  <rect x="200" y="64" width="380" height="34" rx="17" fill="#262a33"/>
+  <circle cx="222" cy="81" r="7" fill="none" stroke="#7d8794" stroke-width="2"/>
+  <line x1="227" y1="86" x2="233" y2="92" stroke="#7d8794" stroke-width="2"/>
+  <text x="244" y="86" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#7d8794">搜索游戏…</text>
+  <rect x="876" y="64" width="100" height="34" rx="17" fill="#262a33"/>
+  <text x="900" y="86" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#c3ccda">排序 ▾</text>
+
+  <!-- card wall -->
+  <!-- row 1 -->
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <!-- tile 1 -->
+    <g transform="translate(200,118)">
+      <rect width="172" height="212" rx="12" fill="#262a33"/>
+      <rect width="172" height="150" rx="12" fill="url(#c1)"/>
+      <text x="14" y="180" font-size="14" font-weight="700" fill="#e6e9ef">赛博朋克 2077</text>
+      <text x="14" y="200" font-size="12" fill="#8b929e">角色扮演 · 95h</text>
+    </g>
+    <!-- tile 2 (selected) -->
+    <g transform="translate(386,118)">
+      <rect width="172" height="212" rx="12" fill="#262a33" stroke="#4cc2ff" stroke-width="2"/>
+      <rect width="172" height="150" rx="12" fill="url(#c2)"/>
+      <circle cx="86" cy="75" r="22" fill="#0b1020" opacity="0.55"/>
+      <path d="M79 66 L98 75 L79 84 Z" fill="#4cc2ff"/>
+      <text x="14" y="180" font-size="14" font-weight="700" fill="#e6e9ef">艾尔登法环</text>
+      <text x="14" y="200" font-size="12" fill="#4cc2ff">动作 · 已选中</text>
+    </g>
+    <!-- tile 3 -->
+    <g transform="translate(572,118)">
+      <rect width="172" height="212" rx="12" fill="#262a33"/>
+      <rect width="172" height="150" rx="12" fill="url(#c3)"/>
+      <text x="14" y="180" font-size="14" font-weight="700" fill="#e6e9ef">极限竞速</text>
+      <text x="14" y="200" font-size="12" fill="#8b929e">竞速 · 42h</text>
+    </g>
+    <!-- tile 4 -->
+    <g transform="translate(758,118)">
+      <rect width="172" height="212" rx="12" fill="#262a33"/>
+      <rect width="172" height="150" rx="12" fill="url(#c4)"/>
+      <text x="14" y="180" font-size="14" font-weight="700" fill="#e6e9ef">星露谷物语</text>
+      <text x="14" y="200" font-size="12" fill="#8b929e">模拟 · 120h</text>
+    </g>
+    <!-- row 2 -->
+    <g transform="translate(200,348)">
+      <rect width="172" height="212" rx="12" fill="#262a33"/>
+      <rect width="172" height="150" rx="12" fill="url(#c5)"/>
+      <text x="14" y="180" font-size="14" font-weight="700" fill="#e6e9ef">巫师 3</text>
+      <text x="14" y="200" font-size="12" fill="#8b929e">角色扮演 · 88h</text>
+    </g>
+    <g transform="translate(386,348)">
+      <rect width="172" height="212" rx="12" fill="#262a33"/>
+      <rect width="172" height="150" rx="12" fill="url(#c6)"/>
+      <text x="14" y="180" font-size="14" font-weight="700" fill="#e6e9ef">空洞骑士</text>
+      <text x="14" y="200" font-size="12" fill="#8b929e">平台 · 56h</text>
+    </g>
+    <g transform="translate(572,348)">
+      <rect width="172" height="212" rx="12" fill="#262a33"/>
+      <rect width="172" height="150" rx="12" fill="url(#c1)"/>
+      <text x="14" y="180" font-size="14" font-weight="700" fill="#e6e9ef">只狼</text>
+      <text x="14" y="200" font-size="12" fill="#8b929e">动作 · 47h</text>
+    </g>
+    <g transform="translate(758,348)">
+      <rect width="172" height="212" rx="12" fill="#262a33"/>
+      <rect width="172" height="150" rx="12" fill="url(#c2)"/>
+      <text x="14" y="180" font-size="14" font-weight="700" fill="#e6e9ef">双人成行</text>
+      <text x="14" y="200" font-size="12" fill="#8b929e">合作 · 14h</text>
+    </g>
+  </g>
+</svg>
