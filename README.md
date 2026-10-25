@@ -1,9 +1,10 @@
 # GameBox 3
 
-> Windows 原生游戏聚合启动器 —— **Node.js + koffi FFI 直接驱动 Win32 / GDI+**，打包为**单 EXE**，双击即用，不依赖浏览器、不依赖安装。
-<img width="3836" height="2058" alt="PixPin_2026-10-25_18-52-18" src="https://github.com/user-attachments/assets/63a922e7-abca-496d-b9c4-b920b043eab6" />
+<p align="center"><img src="assets/logo.svg" alt="GameBox 3" width="360"></p>
 
-适用场景：把 Steam 之外散落在多个目录里的单机/学习版/独立游戏统一收纳、自动抓封面、一键启动，并管理"同时只跑一款游戏 + 一个修改器"。除本机外，也适合手机平板串流后，用触控或者手柄方式选择游戏后进行串流游玩。
+> Windows 原生游戏聚合启动器 —— **Node.js + koffi FFI 直接驱动 Win32 / GDI+**，打包为**单 EXE**，双击即用，不依赖浏览器、不依赖安装。
+
+适用场景：把 Steam 之外散落在多个目录里的单机/盗版/独立游戏统一收纳、自动抓封面、一键启动，并管理"同时只跑一款游戏 + 一个修改器"。
 
 ---
 
@@ -199,6 +200,18 @@ gamebox3/
 - **触屏支持**：点按启动、上下滚动手势 + 惯性、长按出操作菜单、双指捏合缩放。
 - **代理支持**：SOCKS5 / HTTP，配置即时生效，可测试连通性。
 - **数据随行**：配置、游戏库、封面都落在 EXE 同目录 `config\`，便于迁移。
+
+---
+
+## 界面预览（Preview）
+
+> 以下为按照真实界面逻辑绘制的 **UI 原型图**（非运行截图）：左为 PlayNite 风格的深色游戏库卡片墙，右为设置面板。实际界面由 Win32/GDI+ 实时绘制，支持鼠标、触屏与 Xbox 手柄三种操作。
+
+| 主界面（游戏库） | 设置面板 |
+| --- | --- |
+| ![主界面](assets/screenshot-main.svg) | ![设置](assets/screenshot-settings.svg) |
+
+社交预览图 `assets/social-preview.png`（1200×600，深色霓虹主题）已随仓库提供，可在仓库 **Settings → Social preview** 中上传，作为链接分享时的封面。
 
 ---
 
